@@ -97,6 +97,7 @@ Some field types provide more options for controlling their display. Most suppor
 
 | Option | Type | Description |
 |---|---|---|
+| `default` | `mixed` | The default value for the field |
 | `description` | `string` | A description to show alongside the field in the Dashboard. |
 | `disabled` | `boolean` | Indicates that the field should appear disabled. |
 | `required` | `boolean` | Indicates that the field is required before the integration can be created |
