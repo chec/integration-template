@@ -59,7 +59,7 @@ You can configure integrations without having to build a configuration app. When
 Chec Dashboard, you may specify a "form schema" that describes a form that will be rendered in the Chec Dashboard. The
 schema is a JSON array of objects that represent fields to show. The minimum detail required for a field is:
 
-```js
+```json5
 {
   "key": "my_field", // An identifier for the field, and the "key" that the value will be saved to in config
   "label": "My field", // A label to be used for the field
