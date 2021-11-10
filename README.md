@@ -49,6 +49,11 @@ by building a configuration app. The initial code for this is provided in the `c
 information about building a configuration app can be found in the documentation for the
 `integration-configuration-sdk`: https://github.com/chec/integration-configuration-sdk
 
+Configuration apps allow you to provide a custom configuration experience that you might need to appropriately configure
+your integration with a third party service. For instance, you can dynamically update options to choose from after a
+user has entered an API key, or you could implement a full oAuth2 authentication flow within the frame so that the user
+doesn't have to leave the Chec dashboard during configuration of an integration.
+
 ## Testing your integration handler
 
 TODO
@@ -83,6 +88,8 @@ a custom UI.
 | `wysiwyg` | A formattable text area that produces HTML. |
 | `boolean` | Renders a switch. |
 | `select` | Shows a dropdown. Options should be provided under the `options` key of the field schema, as an array of objects with `label` and `value` keys. Additionally, you may specify `multiselect: true` to allow multiple selections. |
+| `button` | Show a button with a label. This will not affect the configuration, but can be used by configuration apps which can watch for click events on the button. |
+| `link` | Show a link that renders in the same style as a button. This link will open in a new window/tab. You will need to provide an `href` attribute in the schema for the link. |
 
 ### Additional options for fields
 
@@ -90,8 +97,9 @@ Some field types provide more options for controlling their display. Most suppor
 
 | Option | Type | Description |
 |---|---|---|
-| `description` | `string` | A description to show alongside the field.
+| `description` | `string` | A description to show alongside the field in the Dashboard. |
 | `disabled` | `boolean` | Indicates that the field should appear disabled. |
+| `required` | `boolean` | Indicates that the field is required before the integration can be created |
 
 ### Sub-schemas
 
@@ -103,8 +111,8 @@ There are two parts to this integration repo that are built independently
 
 ### Integration handler
 
-Currently, the Commerce.js integrations do not support any build pipeline. Integration handlers will need to be built
-and bundled into a tags that will be deployed. Integration handlers are configured in this repository to be bundled with
+The Commerce.js integrations do not support any build pipeline. Integration handlers will need to be built and bundled
+into a tags that will be deployed. Integration handlers are configured in this repository to be bundled with
 `@vercel/ncc`. You may run `yarn build` to bundle the integration handler along with the configuration app, or run
 `yarn build:integration` to build only the integration. When you configure the template with the Chec API/Dashboard,
 you only need to specify the distribution file for the integration handler (`dist/integration/index.js` by default).
