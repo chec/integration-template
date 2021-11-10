@@ -1,0 +1,23 @@
+{
+  "name": "@chec/integration-template",
+  "version": "0.0.0",
+  "description": "A template repository for creating integrations the run on Commerce.js infrastructure",
+  "author": "Chec Platform Ltd.",
+  "license": "BSD-3-Clause",
+  "scripts": {
+    "serve": "parcel configuration-app/index.html",
+    "build:config": "parcel build configuration-app/index.html -d dist/config",
+    "build:integration": "ncc build integration/index.ts -m -o dist/integration",
+    "build": "yarn build:config; yarn build:integration"
+  },
+  "devDependencies": {
+    "@chec/integration-handler": "^0.0.1",
+    "@vercel/ncc": "^0.31.1",
+    "parcel": "^2.0.1",
+    "parcel-bundler": "^1.12.5",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "@chec/integration-configuration-sdk": "^0.0.1"
+  }
+}
