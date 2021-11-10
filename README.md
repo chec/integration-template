@@ -49,10 +49,10 @@ by building a configuration app. The initial code for this is provided in the `c
 information about building a configuration app can be found in the documentation for the
 `integration-configuration-sdk`: https://github.com/chec/integration-configuration-sdk
 
-Configuration apps allow you to provide a custom configuration experience that you might need to appropriately configure
-your integration with a third party service. For instance, you can dynamically update options to choose from after a
-user has entered an API key, or you could implement a full oAuth2 authentication flow within the frame so that the user
-doesn't have to leave the Chec dashboard during configuration of an integration.
+Configuration apps allow you to provide a custom configuration experience that you might need to configure your
+integration with a third party service. For instance, you can dynamically update options to choose from after a user has
+entered an API key, or you could implement a full oAuth2 authentication flow within the frame so that the user doesn't
+have to leave the Chec dashboard during configuration of an integration.
 
 ## Testing your integration handler
 

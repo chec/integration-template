@@ -1,6 +1,6 @@
 import { IntegrationHandler } from '@chec/integration-handler';
 
-const handler: IntegrationHandler = async (request, response) => {
+const handler: IntegrationHandler = async (request, context) => {
   // Integrations are run by events, usually from a webhook. The event that triggered this action is available within
   // the body of the request
   switch (request.body.event) {
