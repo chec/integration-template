@@ -131,3 +131,32 @@ web route for your deployment.
 ## Adding your integration to the Chec Dashboard
 
 TODO add detail indicating how you submit custom integrations when support is added to the Chec API/dashboard
+
+## Troubleshooting
+
+#### `Uncaught ReferenceError: regeneratorRuntime`
+
+Sometimes, integration configuration apps may bring in third party modules that expect to be compiled with Babel. In
+this case, bundling  your configuration app may fail with an error relating to `regeneratorRuntime` being unavailable or
+undefined. You can resolve this by including and bundling the babel `regeneratorRuntime` polyfill:
+
+Add the following babel config to your `package.json`:
+
+```json
+"babel": {
+  "presets": [
+    "@parcel/babel-preset-env",
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "@parcel/babel-plugin-transform-runtime"
+  ]
+},
+```
+
+And then add the polyfill import to `configuration-app/index.ts`
+
+```ts
+import 'regenerator-runtime/runtime';
+```
+
