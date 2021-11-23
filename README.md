@@ -54,10 +54,6 @@ integration with a third party service. For instance, you can dynamically update
 entered an API key, or you could implement a full oAuth2 authentication flow within the frame so that the user doesn't
 have to leave the Chec dashboard during configuration of an integration.
 
-## Testing your integration handler
-
-TODO
-
 ## Integration configuration form schema
 
 You can configure integrations without having to build a configuration app. When adding your integration template to the
@@ -128,35 +124,6 @@ even a publicly routable AWS S3 bucket.
 When using Netlify or Vercel, you can use `yarn build:config` to produce a version of the app, and `dist/config` as a
 web route for your deployment.
 
-## Adding your integration to the Chec Dashboard
+## Submitting your integration
 
-TODO add detail indicating how you submit custom integrations when support is added to the Chec API/dashboard
-
-## Troubleshooting
-
-#### `Uncaught ReferenceError: regeneratorRuntime`
-
-Sometimes, integration configuration apps may bring in third party modules that expect to be compiled with Babel. In
-this case, bundling  your configuration app may fail with an error relating to `regeneratorRuntime` being unavailable or
-undefined. You can resolve this by including and bundling the babel `regeneratorRuntime` polyfill:
-
-Add the following babel config to your `package.json`:
-
-```json
-"babel": {
-  "presets": [
-    "@parcel/babel-preset-env",
-    "@babel/preset-react"
-  ],
-  "plugins": [
-    "@parcel/babel-plugin-transform-runtime"
-  ]
-},
-```
-
-And then add the polyfill import to `configuration-app/index.ts`
-
-```ts
-import 'regenerator-runtime/runtime';
-```
-
+Please email the team at hello@commercejs.com when your integration is built and ready to be submitted
