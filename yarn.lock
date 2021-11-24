@@ -221,18 +221,18 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     to-fast-properties "^2.0.0"
 
-"@chec/integration-configuration-sdk@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@chec/integration-configuration-sdk/-/integration-configuration-sdk-0.0.1.tgz#55290e47586730fcd2067a476c3f99e36c430a0c"
-  integrity sha512-9Squ9EIkX1u24myKd2DNTyuDtwEyN0v0uS0MbAQzPMiCemVPV3z1PMajWcxiJBurHGnusUR5PI1ad/KMXeAbnw==
+"@chec/integration-configuration-sdk@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@chec/integration-configuration-sdk/-/integration-configuration-sdk-0.0.7.tgz#216c534c8eb3aed0d242b8e8d86a8533eac03b3a"
+  integrity sha512-njCbAE0jRSLs5XhtIp6E4jdTn6l5NjqjJOpavd5OszOiTDGOSdudcBWrxS863A2u8uxBtgqzrylV8fLhbSvvww==
   dependencies:
     postmate "^1.5.2"
     typescript "^4.4.4"
 
-"@chec/integration-handler@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@chec/integration-handler/-/integration-handler-0.0.1.tgz#4afd72af4ce28ceb4c44425054241e3d656cd5b3"
-  integrity sha512-aG7jBsZEWgIMoICTyJffvIUpOHD9NXXWFP+lbAVvAdfnhToQ1gFR7PH95i3X5RsoswF9IjogstEix9RJNDp9cw==
+"@chec/integration-handler@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@chec/integration-handler/-/integration-handler-0.0.9.tgz#81f729b658192047aef6ecdf0baadfce91d06abc"
+  integrity sha512-sQPptssQ9DiZBCDWyXeGxnEDhtWEq/bnFNBODryCE/fPuluORoXghklTaoJQFjKfRCIJuzEYNbCI3TdwPECxrQ==
   dependencies:
     "@types/chec__commerce.js" "^2.8.0"
     got "^11.8.2"

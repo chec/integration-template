@@ -11,13 +11,13 @@
     "build": "yarn build:config; yarn build:integration"
   },
   "devDependencies": {
-    "@chec/integration-handler": "^0.0.1",
+    "@chec/integration-handler": "^0.0.9",
     "@vercel/ncc": "^0.31.1",
     "parcel": "^2.0.1",
     "typescript": "^4.4.4"
   },
   "dependencies": {
-    "@chec/integration-configuration-sdk": "^0.0.1"
+    "@chec/integration-configuration-sdk": "^0.0.7"
   },
   "browserslist": {
     "production": [

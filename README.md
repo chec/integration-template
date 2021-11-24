@@ -76,6 +76,8 @@ a custom UI.
 
 ### Available field types:
 
+The following options are the currently supported field types in the Chec Dashboard.
+
 | Field "type" | Description |
 |---|---|
 | `short_text` | A small text input (ie. `<input type="text">`). |
@@ -86,6 +88,18 @@ a custom UI.
 | `select` | Shows a dropdown. Options should be provided under the `options` key of the field schema, as an array of objects with `label` and `value` keys. Additionally, you may specify `multiselect: true` to allow multiple selections. |
 | `button` | Show a button with a label. This will not affect the configuration, but can be used by configuration apps which can watch for click events on the button. |
 | `link` | Show a link that renders in the same style as a button. This link will open in a new window/tab. You will need to provide an `href` attribute in the schema for the link. |
+
+When using TypeScript, there's an `enum` exported that includes the possible values:
+
+```ts
+import { SchemaFieldTypes } from '@chec/integration-configuration-sdk';
+
+const field = {
+  key: 'my_field',
+  label: 'My field',
+  type: SchemaFieldTypes.ShortText,
+}
+```
 
 ### Additional options for fields
 
@@ -100,7 +114,20 @@ Some field types provide more options for controlling their display. Most suppor
 
 ### Sub-schemas
 
-TODO
+If you want to use nested objects in your configuration object, you can create "sub-schemas" in your schema to build out
+nested objects in your configuration. Like other parts of the schema, sub schema require a `key` and a `label`. The
+labels will be used to separate the parts of your configuration into blocks in the form UI. Finally, you will need to
+provide a `schema` to be the sub-schema:
+
+```json5
+{
+  "key": "extra",
+  "label": "Supplementary details",
+  "schema": [
+    { "key": "message", type: "short_text", label: "Extra message" }
+  ]
+}
+```
 
 ## Bundling your integration for usage
 
@@ -123,6 +150,18 @@ even a publicly routable AWS S3 bucket.
 
 When using Netlify or Vercel, you can use `yarn build:config` to produce a version of the app, and `dist/config` as a
 web route for your deployment.
+
+## TypeScript
+
+This repo is configured to be built using typescript. A `configuration-type.ts` file has been created at the root of
+this template to assist with proper type checking when using integration configuration and when building schemas for
+your configuration.
+
+### Removing TypeScript
+
+You may remove the typescript related code, and convert the files to simple JS files. Then, you will need to change the
+reference to `.ts` files in both `package.json` and `configuration-app/index.html`. Both `parcel` and `ncc` used for
+bundling the different parts of the integration will automatically drop TypeScript compilation from the build process.
 
 ## Submitting your integration
 
