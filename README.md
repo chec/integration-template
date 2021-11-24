@@ -6,18 +6,18 @@ these integrations with an experience which can be completely customised by the 
 
 ## The anatomy of an integration
 
-"Integration" refers to a configured instance of an "integration template". This repo represents and integration
+"Integration" refers to a configured instance of an "integration template". This repo represents an integration
 template. The code here will be used by the Commerce.js infrastructure to create configured "integration" instances on
 demand for merchants using Commerce.js.
 
-Integration templates usually consist of two parts;
+Integration templates usually consist of one or two parts;
 - an "integration handler" that is deployed to the Commerce.js infrastructure and handles webhook events or customer
 requests,
 - and (optionally) a small web app that customises the configuration experience for the merchant enabling integrations
 through the Chec Dashboard.
 
 The configuration experience is optional, as an integration template can simply specify fields to display to a merchant
-during configuration, or may require no configuration at all, in some cases.
+during configuration, or may require no configuration at all.
 
 ## Getting started
 
